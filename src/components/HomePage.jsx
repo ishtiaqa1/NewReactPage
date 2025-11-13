@@ -7,7 +7,7 @@ const HomePage = () => {
 
 
       <h1 className="homepage-title">
-        Hi! I'm <span className="typing">Ishtiaq Akanda</span>
+        <span className="typing">Hi! I'm Ishtiaq Akanda</span>
       </h1>
 
       <p className="homepage-subtitle">Software Engineer Fellow at The Marcy Lab School</p>
