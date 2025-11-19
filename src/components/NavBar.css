@@ -41,7 +41,34 @@
   color: #64edff;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
+
+@media (max-width: 760px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    background: #0e182e;
+    padding: 1rem;
+    border-radius: 12px;
+    gap: 1rem;
+    padding-right: 10px;
+  }
+  .nav-links.open {
+    display: flex;
+  }
 }
+
+@media (min-width: 769px) {
+  .hamburger-btn {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+}
+
+
