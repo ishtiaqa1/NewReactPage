@@ -12,8 +12,8 @@ const Contact = () => {
       </p>
 
       <div className="contact-links">
-        <a href="mailto:ishtiaqa@gmail.com" className="contact-item">Email Me</a>
-        <a href="https://github.com/ishtiaqa" target="_blank" className="contact-item">GitHub</a>
+        <a href="mailto:ishtiaqa2003@gmail.com" className="contact-item">Email Me</a>
+        <a href="https://github.com/ishtiaqa1" target="_blank" className="contact-item">GitHub</a>
         <a href="https://www.linkedin.com/in/ishtiaq-akanda/" target="_blank" className="contact-item">LinkedIn</a>
         <a href={Resume} target = '_blank' className="contact-item">Download Resume</a>
       </div>
