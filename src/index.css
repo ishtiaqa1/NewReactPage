@@ -3,16 +3,13 @@
   line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #121212; /* dark portfolio background */
+  background-color: #121212; 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* --------------------------
-   Reset & Base Styles
--------------------------- */
 html, body {
   margin: 0;
   padding: 0;
@@ -29,7 +26,6 @@ html, body {
   box-sizing: inherit;
 }
 
-/* Links */
 a {
   font-weight: 500;
   color: #64edff;
@@ -41,7 +37,6 @@ a:hover {
   color: #38bdf8;
 }
 
-/* Buttons */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -58,20 +53,16 @@ button:hover {
   border-color: #646cff;
 }
 
-/* Headings */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-/* --------------------------
-   Layout & Page Flow
--------------------------- */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 80px;       /* navbar height */
+  padding-top: 80px; 
   margin: 0;
 }
 
@@ -81,10 +72,6 @@ body {
   flex-direction: column;
 }
 
-
-/* --------------------------
-   Navbar Styles
--------------------------- */
 .navBar {
   width: 100%;
   position: fixed;
@@ -146,7 +133,6 @@ body {
   color: #38bdf8;
 }
 
-/* Responsive Navbar */
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
@@ -172,9 +158,6 @@ body {
   }
 }
 
-/* --------------------------
-   Footer Styles
--------------------------- */
 .footer {
   width: 100%;
   background-color: #0f172a;
@@ -215,7 +198,6 @@ body {
   fill: currentColor;
 }
 
-/* Responsive Footer */
 @media (max-width: 480px) {
   .footer-links {
     flex-direction: column;
