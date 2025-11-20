@@ -1,5 +1,5 @@
 import './HomePage.css';
-//import profilePic from './profile.jpg';
+
 const HomePage = () => {
   return (
     <div className="homepage">
@@ -12,8 +12,8 @@ const HomePage = () => {
       <p className="homepage-subtitle">Software Engineer Fellow at The Marcy Lab School</p>
 
       <p className="homepage-intro">
-        I love to build interactive web applications, solve challenging problems, 
-        and love exploring new technologies. Welcome to my portfolio!
+        I love to build interactive web applications, play with data, solve challenging problems, 
+        and explore new technologies. Welcome to my portfolio!
       </p>
 
       <div className="homepage-buttons">
