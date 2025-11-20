@@ -6,7 +6,7 @@
   background-color: #1e1e1e;
   padding: 1rem 2rem;
   z-index: 1000;
-  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
   box-sizing: border-box;
 }
 
@@ -21,8 +21,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -44,7 +42,6 @@
   fill: currentColor;
 }
 
-/* Responsive for small screens */
 @media (max-width: 480px) {
   .footer-links {
     flex-direction: column;

@@ -5,3 +5,7 @@ body {
     text-align: center;
     color: #ffffff;
 }
+
+.about-container {
+  padding-bottom: 4rem;
+}
