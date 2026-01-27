@@ -8,12 +8,18 @@
   z-index: 1001;  
 }
 
+.hamburger-btn:hover {
+  transform: scale(1.05);
+  border: solid 1px #141414;
+  transition: all 0.3s ease-in-out;
+}
+
 .hamburger-icon {
   width: 28px;
   height: 28px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 762px) {
   .hamburger-btn {
     display: block;
   }

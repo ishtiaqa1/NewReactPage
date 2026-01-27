@@ -1,15 +1,17 @@
 .footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-shrink: 0;
   width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   background-color: #1e1e1e;
+  color: #ffffff;
   padding: 1rem 2rem;
+  text-align: center;
   z-index: 1000;
   border-top: 1px solid #333;
   box-sizing: border-box;
 }
-
 
 .footer-text {
   font-size: 0.9rem;
@@ -21,6 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .footer-links a {
@@ -48,4 +51,5 @@
     gap: 0.5rem;
   }
 }
+
 

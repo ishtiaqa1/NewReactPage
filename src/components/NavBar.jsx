@@ -23,7 +23,7 @@ const NavBar = () => {
   return (
     <nav className='navBar'>
       <div className='nav-container'>
-        <h1 className="nav-logo"><Link to='/'>Ishtiaq<span>Dev</span></Link></h1>
+        <h1 className="nav-logo"><Link to='/'>Ishtiaq Akanda</Link></h1>
 
         {menuOpen && (
           <ul className="nav-links">
