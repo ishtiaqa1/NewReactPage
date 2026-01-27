@@ -3,8 +3,9 @@ import { GitHubCalendar } from "react-github-calendar";
 
 const HomePage = () => {
   return (
+    <div id='homepage-master'>
     <div className="homepage-sections">
-      <img src='\src\assets\—Pngtree—web development_6283614.png' alt='image from pngtree.com' className='homepage-png'/>
+      <img src='/src/assets/Web-Dev-Png-Tree.png' alt='image from pngtree.com' className='homepage-png'/>
       <div className='homepage'>
         <h1 className="homepage-title">
           <span className="typing">Hi! I'm Ishtiaq Akanda</span>
@@ -22,11 +23,11 @@ const HomePage = () => {
           <a href="/contact" className="btn btn-secondary">Contact Me</a>
         </section>
       </div>
+    </div>
       <img className='git'
         src="https://github-readme-stats.vercel.app/api?username=ishtiaqa1&show_icons=true&theme=dark"
         alt="GitHub Stats"
       />
-      <GitHubCalendar className='git' username="ishtiaqa1" />
     </div>
   )
 }

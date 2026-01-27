@@ -1,11 +1,18 @@
+#homepage-master {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 4rem;
+}
+
 .homepage-sections {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 4rem;
   margin: auto;
   padding: 2rem;
-  justify-items: center;
-  align-items: center;
+  justify-content: center;
 }
 
 .homepage {
@@ -16,13 +23,14 @@
   background-color: #121212;
   box-sizing: border-box;
   margin: auto;
-  padding: 10px;
+  padding: 1rem;
+  flex: 1;
 }
 
 .homepage-png {
   width: 100%;
   max-width: 650px;
-  margin: auto;
+  flex: 2;
 }
 
 .homepage-title {
@@ -104,10 +112,8 @@
   color: white;
 }
 
-#git-con {
-  display: grid;
-  grid-template-columns: auto;
-  gap: 4rem;
+.git {
+  padding: 4rem;
 }
 
 @media (min-width: 640px) {
@@ -121,17 +127,8 @@
     font-size: 1.5rem;
   }
 
-    .homepage-title {
+  .homepage-title {
     font-size: 4rem;
   }
-}
 
-@media (max-width: 1200px) {
-  .homepage-sections {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  
 }
