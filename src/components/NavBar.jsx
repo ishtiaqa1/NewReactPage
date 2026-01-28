@@ -22,7 +22,7 @@ const NavBar = () => {
 
   return (
     <nav className='navBar'>
-      <div className='nav-container'>
+      <section className='nav-container'>
         <h1 className="nav-logo"><Link to='/'>Ishtiaq Akanda</Link></h1>
 
         {menuOpen && (
@@ -37,7 +37,7 @@ const NavBar = () => {
         {window.innerWidth <= 760 && (
           <Hamburger onClick={() => setMenuOpen(!menuOpen)} />
         )}
-      </div>
+      </section>
     </nav>
   )
 }

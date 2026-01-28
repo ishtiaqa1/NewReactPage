@@ -1,0 +1,25 @@
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#project-grid {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+}
+
+.projectElement {
+    border-radius: 8px;
+}
+
+.projectElement figure img {
+    max-width: 600px;
+}
+
+.projectElement:hover {
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+}

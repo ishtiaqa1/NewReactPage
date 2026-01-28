@@ -2,16 +2,19 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  padding: 4rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .homepage-sections {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: 4rem;
+  gap: 2rem;
   margin: auto;
-  padding: 2rem;
   justify-content: center;
 }
 
@@ -24,13 +27,13 @@
   box-sizing: border-box;
   margin: auto;
   padding: 1rem;
-  flex: 1;
+  max-width: 90vw;
 }
 
 .homepage-png {
   width: 100%;
-  max-width: 650px;
-  flex: 2;
+  max-width: 350px;
+  height: auto;
 }
 
 .homepage-title {
@@ -80,40 +83,15 @@
 
 .homepage-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
 }
 
-.btn {
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background-color: #3b82f6;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #2563eb;
-}
-
-.btn-secondary {
-  border: 2px solid #3b82f6;
-  color: #3b82f6;
-  background-color: transparent;
-}
-
-.btn-secondary:hover {
-  background-color: #3b82f6;
-  color: white;
-}
 
 .git {
-  padding: 4rem;
+  max-width: 90vw;
+  padding: 2rem 0;
+  height: auto;
 }
 
 @media (min-width: 640px) {
@@ -123,6 +101,9 @@
 }
 
 @media (min-width: 768px) {
+  .homepage-master {
+    max-width: 400px;
+  }
   .homepage-subtitle {
     font-size: 1.5rem;
   }
@@ -131,4 +112,11 @@
     font-size: 4rem;
   }
 
+}
+
+@media (min-width: 1096px) {
+  .homepage-sections {
+    flex-direction: row;
+    gap: 4rem;
+  }
 }

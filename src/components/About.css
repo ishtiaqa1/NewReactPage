@@ -4,6 +4,13 @@
   margin: auto;
   align-items: center;
   gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
 }
 
 #about-section {
@@ -14,7 +21,7 @@
   gap: 50px;
 }
 
-#tools ul{
+.skills{
   list-style-type: none;
   display: grid;
   grid-template-columns: auto;
@@ -22,16 +29,22 @@
   gap: 10px;
 }
 
-#tools ul li {
-  background-color: rgb(255, 255, 255);
-  color: #222020;
+.skills li {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
   border-radius: 4px;
-  padding: 5px;
+}
+
+.skills li figure img {
+  max-width: 30px;
+  min-height: 30px;
 }
 
 #tools ul li:hover {
+  color: #3b82f6;
   transform: scale(1.05);
   box-shadow: 5px 2px 2px 2px #3b82f6;
+  transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 768px) {

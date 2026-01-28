@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div className='page-content'>
+      <section className='page-content'>
       <NavBar/>
         <Routes>
           <Route path="/" element={<HomePage />}/>
@@ -19,7 +19,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
         </Routes>
         <Footer/>
-      </div>
+      </section>
     </Router>
   )
 }

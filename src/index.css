@@ -12,6 +12,7 @@ html, body {
   background-color: #121212;
   color: rgba(255, 255, 255, 0.87);
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .page-content {
@@ -54,3 +55,30 @@ h1 {
   line-height: 1.1;
 }
 
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.btn-secondary {
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: #3b82f6;
+  color: white;
+}
