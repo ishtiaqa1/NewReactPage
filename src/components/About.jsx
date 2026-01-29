@@ -29,7 +29,16 @@ const About = () => {
         <section id='about-me'>
           <h2>About Me</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, minus voluptatum! Rem numquam dicta iure ratione! Assumenda omnis rerum accusamus velit deleniti cumque. Sapiente necessitatibus dolore odit voluptate consequatur tempora aliquam, repellendus repudiandae maxime? Dignissimos nemo maxime perferendis voluptate explicabo molestiae consequuntur laboriosam nostrum, doloribus expedita! Corporis tenetur cumque voluptates repudiandae sunt eligendi deserunt quos. Repudiandae, beatae. Maiores tempore iusto quo vero natus at facilis sunt officia, quos odio, laborum debitis doloremque explicabo, commodi velit autem deleniti optio pariatur eaque? Sed est quibusdam tenetur corporis nobis laborum quae voluptates libero reprehenderit earum dolorum quam similique deleniti ipsam modi doloribus neque iusto ipsa, ratione corrupti saepe repellat eaque. Dolores ipsum ullam ab laboriosam ut quasi soluta nesciunt! Autem similique ipsam tenetur, veniam debitis veritatis impedit sint ab unde incidunt qui numquam consequatur quasi? Veritatis molestiae explicabo autem fuga placeat quia! Suscipit tempore odit consequatur aliquam perspiciatis consequuntur voluptate. Facilis consectetur, saepe accusantium dolore dolores eligendi distinctio voluptates possimus quas enim eaque, omnis doloremque libero sequi aliquam veritatis fugiat fuga. Inventore, dolorem? Accusamus quae sint voluptas cum? Sapiente ut voluptas tempora qui tempore voluptatum soluta sed, odit iure, impedit quam, necessitatibus nesciunt nihil veniam sunt natus modi ab ipsa voluptates debitis autem.
+            Hey! I'm Ishtiaq Akanda, a born and raised first-generation Bengali-American from the Bronx, NY. As a kid I've always been curios how the web works,
+            makes sense from me growing up around computers and the internet. I even used to manipulate http headers, work with dev tools and experiment with changing 
+            cookies to sign myself into Netflix or Hulu in a strange way. All these things and my parents and grandparents saying "Hey maybe he'll work with those someday"
+            made me realize I can give into my curiosity and make a impact one day.
+          </p>
+          <p>
+            I eventually made it to the University at Buffalo, studying computer science, I thought I was closer to my dream. However, where I thought my way of learning hands-on 
+            would be fullfilled, I quickly learned computer science was mostly theoretical, and not pushing me in the way I wanted to be pushed. Then, came my friend who mentioned 
+            <a href='https://www.marcylabschool.org/'> the Marcy Lab School</a> how it was hands-on, practical, and how it helped him break into the tech world, I knew immediately 
+            that this was the place for me. Even right now, I know I made the right choice.
           </p>
         </section>
 

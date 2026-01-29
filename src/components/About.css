@@ -7,6 +7,7 @@
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
+  padding: 2rem;
 }
 
 h1 {
@@ -38,6 +39,10 @@ h1 {
 .skills li figure img {
   max-width: 30px;
   min-height: 30px;
+}
+
+#tools {
+  text-align: center;
 }
 
 #tools ul li:hover {

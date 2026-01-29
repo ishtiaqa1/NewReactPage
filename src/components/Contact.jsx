@@ -14,21 +14,11 @@ const Contact = () => {
         I'm always open to new opportunities, collaborations, or just a friendly chat.
       </p>
 
-      <section>
-        <ul className="contact-links">
-          <li >
+      <section className="contact-links">
             <a href="mailto:ishtiaqa2003@gmail.com" className="contact-item">Email Me</a>
-          </li>
-          <li >
             <a href="https://github.com/ishtiaqa1" target="_blank" className="contact-item">GitHub</a>
-          </li>
-          <li >
             <a href="https://www.linkedin.com/in/ishtiaq-akanda/" target="_blank" className="contact-item">LinkedIn</a>
-          </li>
-          <li >
             <a href={Resume} target = '_blank' className="contact-item">Download Resume</a>
-          </li>
-        </ul>
       </section>
     </section>
 

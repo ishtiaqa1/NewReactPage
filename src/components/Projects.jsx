@@ -17,7 +17,10 @@ const Projects = () => {
               Collaborated with a team of five developers to design and develop an interactive American Mahjong app website,
 integrating user authentication, real-time leaderboards, and multiplayer gameplay, within three months.
             </figcaption>
-            <a href="https://github.com/ishtiaqa1/Mahjong" target='_blank'>GitHub</a>
+            <section className='project-links'>
+                <a href="https://github.com/ishtiaqa1/Mahjong" target='_blank'>GitHub</a>
+                <a href='https://www.figma.com/design/poXUVDO8YHUaDKAV9BOqlB/Team-Jokers?node-id=0-1&t=JEpWANIHD1Yue8EA-1'>Figma</a>
+            </section>
           </figure>
           </li>
         <li className='projectElement'>

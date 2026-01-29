@@ -7,11 +7,17 @@
 #project-grid {
     list-style-type: none;
     display: grid;
-    grid-template-columns: repeat(auo-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 6rem;
+    align-items: stretch;
+}
+
+.projectElement {
+    height: 100%;
 }
 
 .projectElement figure {
+    height: 100%;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -20,19 +26,36 @@
     background-color: black;
 }
 
+.projectElement figcaption {
+    flex-grow: 1;
+}
+
+.projectElement a {
+    margin-top: auto;
+}
+
 .img img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border-radius: 8px;
 }
 
 .img{
-  max-width:600px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 .projectElement:hover {
     transform: scale(1.05);
     transition: all 0.5s ease-in-out;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
 }
 
 @media (min-width: 768px) {
