@@ -33,10 +33,10 @@ const Contact = () => {
           </section>
           <section className="text-box">
             <label for="email">E-Mail</label>
-            <input id="email" type="text" required placeholder="yourmail@example.com"></input>
+            <input id="email" type="text" required placeholder="Yourmail@example.com"></input>
           </section>
           <section className="text-area">
-            <label for="iquiry">E-Mail</label>
+            <label for="iquiry">Inquiry</label>
             <textarea id="inquiry" required placeholder="Messages, requests, and more!"></textarea>
           </section>
           <button className="btn btn-primary" type="submit">Submit</button>
