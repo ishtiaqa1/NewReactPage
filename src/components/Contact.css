@@ -89,6 +89,10 @@ input, textarea {
   box-sizing: border-box;
 }
 
+textarea {
+  height: 100px;
+}
+
 @media (min-width: 768px) {
   .contact-links {
     flex-direction: row;
