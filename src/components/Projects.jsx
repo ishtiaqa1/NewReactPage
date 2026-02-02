@@ -53,7 +53,10 @@ integrating user authentication, real-time leaderboards, and multiplayer gamepla
               <figcaption>
                 Built this portfolio site, using ReactJS, CSS3, and a API. Resulting in a site with over 2.34k unique visitors per month!
               </figcaption>
-              <a href='https://github.com/ishtiaqa1/NewReactPage' target='_blank'>Github</a>
+              <section className='project-links'>
+                <a href='https://github.com/ishtiaqa1/NewReactPage' target='_blank'>Github</a>
+                <a href='https://ishtiaqakanda.dev/'>Deployed</a>
+            </section>
           </figure>
         </li>
       </ul>

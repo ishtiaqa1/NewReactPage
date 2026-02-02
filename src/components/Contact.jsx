@@ -18,7 +18,7 @@ const Contact = () => {
             <a href="mailto:ishtiaqa2003@gmail.com" className="contact-item">Email Me</a>
             <a href="https://github.com/ishtiaqa1" target="_blank" className="contact-item">GitHub</a>
             <a href="https://www.linkedin.com/in/ishtiaq-akanda/" target="_blank" className="contact-item">LinkedIn</a>
-            <a href={Resume} target = '_blank' className="contact-item">Download Resume</a>
+            <a href={Resume} target = '_blank' className="contact-item">View Resume</a>
       </section>
     </section>
 
