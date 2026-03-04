@@ -4,6 +4,7 @@ import mahjong from '../assets/mahjong.jpg'
 import fred from '../assets/freddashboard.png'
 import cli from '../assets/command-line.jpg'
 import portolio from '../assets/Portfolio-site.png'
+import mangohub from '../assets/mangohub.png'
 
 const Projects = () => {
   return (
@@ -20,29 +21,38 @@ integrating user authentication, real-time leaderboards, and multiplayer gamepla
             <section className='project-links'>
                 <a href="https://github.com/ishtiaqa1/Mahjong" target='_blank'>GitHub</a>
                 <a href='https://www.figma.com/design/poXUVDO8YHUaDKAV9BOqlB/Team-Jokers?node-id=0-1&t=JEpWANIHD1Yue8EA-1'>Figma</a>
+                <a href="" style={{color: "red"}}>Not Yet Deployed!</a>
             </section>
           </figure>
-          </li>
+        </li>
         <li className='projectElement'>
           <figure>
             <div className='img'>
             <img src={fred} alt="A US Economic Dashboard" />
             </div>
             <figcaption>
-              Built a Economic Dashboard using data in json format from FRED (Federal Reserve Economic Data) API, in ExpressJS and ReactJS for a frontend design. 
+              Built a Economic Dashboard using data in json format from FRED (Federal Reserve Economic Data) API, in ExpressJS and ReactJS. This 
+              displays four economic indicators GDP, Unemployment rate, Inflation rate, and Interest Rate. Then a indicator selector is used to chart
+              out data over time (implemented in ChartJS).
             </figcaption>
-            <a href='https://github.com/ishtiaqa1/Fred-DashBoard' target='_blank'>Github</a>
+            <section className='project-links'>
+                <a href='https://github.com/ishtiaqa1/Fred-DashBoard' target='_blank'>Github</a>
+                <a href='https://freddashboard.vercel.app/' target='_blank'>Deployed</a>
+            </section>
           </figure>
         </li>
         <li className='projectElement'>
           <figure>
-            <div className='img'>
-              <img src={cli} alt='A Rock Paper Scissors Game'/>
-            </div>
+            <div className="img"> <img src={mangohub} alt="A Anime/Manga Dashboard" /></div>
             <figcaption>
-              Created a rock paper scissors game for the command line, where players can play against the computer and view their own stats.
+              Collaborated with another developer to design and create an interactive anime and manga website,
+integrating a anime manga selector that switches overall site content from anime or manga, an interactive modal that displays more details like a trailer,
+ a top ranked section, an ongoing section, explore section and favorites section, within one week.
             </figcaption>
-            <a href='https://github.com/ishtiaqa1/swe-project-1-cli-app' target='_blank'>Github</a>
+            <section className='project-links'>
+                <a href="https://github.com/Ishtiaq-William-mls/mod-4-project" target='_blank'>GitHub</a>
+                <a href='https://ishtiaq-william-mls.github.io/mod-4-project/' target='_blank'>Deployed</a>
+            </section>
           </figure>
         </li>
         <li className='projectElement'>
@@ -56,6 +66,20 @@ integrating user authentication, real-time leaderboards, and multiplayer gamepla
               <section className='project-links'>
                 <a href='https://github.com/ishtiaqa1/NewReactPage' target='_blank'>Github</a>
                 <a href='https://ishtiaqakanda.dev/'>Deployed</a>
+            </section>
+          </figure>
+        </li>
+        <li className='projectElement'>
+          <figure>
+            <div className='img'>
+              <img src={cli} alt='A Rock Paper Scissors Game'/>
+            </div>
+            <figcaption>
+              Created a rock paper scissors game for the command line, where players can play against the computer and view their own stats.
+            </figcaption>
+            <section className='project-links'>
+              <a href='https://github.com/ishtiaqa1/swe-project-1-cli-app' target='_blank'>Github</a>
+              <a href="" style={{color: "red"}}>Not Yet Deployed!</a>
             </section>
           </figure>
         </li>
