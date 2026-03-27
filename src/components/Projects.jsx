@@ -20,8 +20,8 @@ integrating user authentication, real-time leaderboards, and multiplayer gamepla
             </figcaption>
             <section className='project-links'>
                 <a href="https://github.com/ishtiaqa1/Mahjong" target='_blank'>GitHub</a>
-                <a href='https://www.figma.com/design/poXUVDO8YHUaDKAV9BOqlB/Team-Jokers?node-id=0-1&t=JEpWANIHD1Yue8EA-1'>Figma</a>
-                <a href="" style={{color: "red"}}>Not Yet Deployed!</a>
+                <a href='https://www.figma.com/design/poXUVDO8YHUaDKAV9BOqlB/Team-Jokers?node-id=0-1&t=JEpWANIHD1Yue8EA-1' target='_blank'>Figma</a>
+                <a href="https://mahjong-seven-sage.vercel.app/" target='_blank'>Deployed</a>
             </section>
           </figure>
         </li>
