@@ -52,6 +52,7 @@ integrating a anime manga selector that switches overall site content from anime
             <section className='project-links'>
                 <a href="https://github.com/Ishtiaq-William-mls/mod-4-project" target='_blank'>GitHub</a>
                 <a href='https://ishtiaq-william-mls.github.io/mod-4-project/' target='_blank'>Deployed</a>
+                <a href='https://docs.google.com/presentation/d/1bGw4HxgtZ2RmUKXpLxJB6hlkobkVdPqYuR-vfDmN6tw/edit?usp=sharing' target='_blank'>Slides</a>
             </section>
           </figure>
         </li>
