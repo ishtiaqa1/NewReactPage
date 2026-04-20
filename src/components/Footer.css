@@ -1,57 +1,69 @@
 .footer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  flex-shrink: 0;
-  width: 100%;
-  background-color: #1e1e1e;
-  color: #ffffff;
-  padding: 1rem 2rem;
-  text-align: center;
-  z-index: 1000;
-  border-top: 1px solid #333;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  background: var(--bg);
 }
 
-.footer-text {
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.footer-name {
+  font-family: var(--font-display);
   font-size: 0.9rem;
-  color: #9ca3af;
-  margin: 0;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
 .footer-links {
-  list-style-type: none;
+  list-style: none;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.footer-links a {
-  color: #3b82f6;
-  text-decoration: none;
-  transition: color 0.3s;
-  display: flex;
-  align-items: center;
   gap: 0.5rem;
 }
 
-.footer-links a:hover {
-  color: #2563eb;
+.footer-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 
-.footer-icon {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
+.footer-icon-link:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: rgba(255,255,255,0.04);
 }
-
-@media (max-width: 480px) {
-  .footer-links {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-

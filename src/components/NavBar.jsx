@@ -1,45 +1,67 @@
-import { Link } from 'react-router-dom';
-import React, { useState, useEffect } from "react";
-import './NavBar.css';
+import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Hamburger from './Hamburger.jsx';
+import './NavBar.css';
 
 const NavBar = () => {
-  const [menuOpen, setMenuOpen] = useState(window.innerWidth > 760);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 760) {
-        setMenuOpen(true);  
-      } else {
-        setMenuOpen(false); 
-      }
+    const handleResize = () => setIsMobile(window.innerWidth <= 760);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
     };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return (
-    <nav className='navBar'>
-      <section className='nav-container'>
-        <h1 className="nav-logo"><Link to='/'>Ishtiaq Akanda</Link></h1>
+  useEffect(() => { setMenuOpen(false); }, [location]);
 
-        {menuOpen && (
-          <ul className="nav-links">
-            <li className='navElement'><Link to='/'>Home</Link></li>
-            <li className='navElement'><Link to='/about'>About</Link></li>
-            <li className='navElement'><Link to='/projects'>Projects</Link></li>
-            <li className='navElement'><Link to='/contact'>Contact</Link></li>
+  return (
+    <nav className={`navBar${scrolled ? ' scrolled' : ''}`}>
+      <div className='nav-container'>
+        <Link to='/' className='nav-logo'>
+          <span className='logo-ia'>IA</span>
+          <span className='logo-name'>Ishtiaq Akanda</span>
+        </Link>
+
+        {!isMobile && (
+          <ul className='nav-links'>
+            {[['/', 'Home'], ['/about', 'About'], ['/projects', 'Projects'], ['/contact', 'Contact']].map(([path, label]) => (
+              <li key={path} className={`navElement${location.pathname === path ? ' active' : ''}`}>
+                <Link to={path}>{label}</Link>
+              </li>
+            ))}
+            <li>
+              <a href='https://www.linkedin.com/in/ishtiaq-akanda/' target='_blank' rel='noopener noreferrer' className='nav-cta'>
+                Hire Me
+              </a>
+            </li>
           </ul>
         )}
 
-        {window.innerWidth <= 760 && (
+        {isMobile && (
           <Hamburger onClick={() => setMenuOpen(!menuOpen)} />
         )}
-      </section>
+      </div>
+
+      {isMobile && menuOpen && (
+        <ul className='nav-mobile'>
+          {[['/', 'Home'], ['/about', 'About'], ['/projects', 'Projects'], ['/contact', 'Contact']].map(([path, label]) => (
+            <li key={path}><Link to={path}>{label}</Link></li>
+          ))}
+          <li>
+            <a href='https://www.linkedin.com/in/ishtiaq-akanda/' target='_blank' rel='noopener noreferrer'>Hire Me</a>
+          </li>
+        </ul>
+      )}
     </nav>
-  )
-}
+  );
+};
 
 export default NavBar;

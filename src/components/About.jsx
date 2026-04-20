@@ -1,171 +1,165 @@
-import React from 'react'
+import { useEffect } from 'react';
 import './About.css';
-import javascriptIcon from '../assets/icons/javascript-original.svg'
-import CIcon from '../assets/icons/C.svg'
-import HTMLIcon from '../assets/icons/HTML5.svg'
-import CSSIcon from '../assets/icons/CSS3.svg'
-import ScalaIcon from '../assets/icons/Scala.svg'
-import PythonIcon from '../assets/icons/Python.svg'
-import SQLIcon from '../assets/icons/SQL Developer.svg'
-import PHPIcon from '../assets/icons/PHP.svg'
-import ReactIcon from '../assets/icons/React.svg'
-import NodeIcon from '../assets/icons/Node.js.svg'
-import ExpressIcon from '../assets/icons/Express.svg'
-import GitIcon from '../assets/icons/Git.svg'
-import GithubIcon from '../assets/icons/GitHub.svg'
-import VMWareIcon from '../assets/icons/vmware-1.svg'
-import CloudflareIcon from '../assets/icons/Cloudflare.svg'
-import TableauIcon from '../assets/icons/tableau-svgrepo-com.svg'
-import StataIcon from '../assets/icons/Stata.svg'
-import FigmaIcon from '../assets/icons/Figma.svg'
+
+const LANGS = [
+  { name: 'JavaScript', icon: 'JS', color: '#f0db4f' },
+  { name: 'Python', icon: 'PY', color: '#4584b6' },
+  { name: 'HTML5', icon: 'HT', color: '#e34f26' },
+  { name: 'CSS3', icon: 'CS', color: '#1572b6' },
+  { name: 'SQL', icon: 'SQ', color: '#336791' },
+  { name: 'PHP', icon: 'PH', color: '#8892bf' },
+  { name: 'Scala', icon: 'SC', color: '#dc322f' },
+  { name: 'C', icon: 'C', color: '#a8b9cc' },
+];
+
+const FRAMEWORKS = [
+  { name: 'React', icon: 'RE', color: '#61dafb' },
+  { name: 'Node.js', icon: 'NO', color: '#68a063' },
+  { name: 'Express', icon: 'EX', color: '#aaaaaa' },
+  { name: 'Chart.js', icon: 'CH', color: '#f06969' },
+];
+
+const TOOLS = [
+  { name: 'Git', icon: 'GI', color: '#f05032' },
+  { name: 'GitHub', icon: 'GH', color: '#ffffff' },
+  { name: 'Figma', icon: 'FI', color: '#f24e1e' },
+  { name: 'Cloudflare', icon: 'CF', color: '#f48120' },
+  { name: 'Tableau', icon: 'TA', color: '#e97627' },
+  { name: 'VMware', icon: 'VM', color: '#607078' },
+  { name: 'Stata', icon: 'ST', color: '#1a5276' },
+];
+
+const TIMELINE = [
+  { year: '2021', title: 'University at Buffalo', sub: 'B.A. Computer Science & Economics', icon: '🎓' },
+  { year: '2024', title: 'Portfolio Launch', sub: 'ishtiaqakanda.dev — 2.34k+ visitors/mo', icon: '🚀' },
+  { year: '2025', title: 'American Mahjong App', sub: 'Fully Funtional Mahjong Game', icon: '🀄' },
+  { year: '2025', title: 'Marcy Lab School', sub: 'Software Engineering Fellow', icon: '⚡' },
+  { year: '2026', title: 'MangoHub Anime/Manga Dashboard', sub: 'Discover Anime and Manga', icon: '🥭' },
+  { year: '2026', title: 'US Economic Dashboard', sub: 'Visualize Govermental Data on GDP, Inflation, etc.', icon: '💸' },
+];
+
+const SkillChip = ({ name, icon, color }) => (
+  <div className='skill-chip'>
+    <span className='skill-icon' style={{ background: `${color}22`, color }}>{icon}</span>
+    <span className='skill-name'>{name}</span>
+  </div>
+);
 
 const About = () => {
+  useEffect(() => {
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 60);
+        }
+      });
+    }, { threshold: 0.08 });
+    els.forEach(el => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <section className='about-container'>
-      <h1>Hi! Im Ishtiaq Akanda!</h1>
-
-      <section id='about-section'>
-
-        <section id='about-me'>
-          <h2>About Me</h2>
-          <p>
-            Hey! I'm Ishtiaq Akanda, a born and raised first-generation Bengali-American from the Bronx, NY. As a kid I've always been curios how the web works,
-            makes sense from me growing up around computers and the internet. I even used to manipulate http headers, work with dev tools and experiment with changing 
-            cookies to sign myself into Netflix or Hulu in a strange way. All these things and my parents and grandparents saying "Hey maybe he'll work with those someday"
-            made me realize I can give into my curiosity and make a impact one day.
-          </p>
-          <p>
-            I eventually made it to the University at Buffalo, studying computer science, I thought I was closer to my dream. However, where I thought my way of learning hands-on 
-            would be fullfilled, I quickly learned computer science was mostly theoretical, and not pushing me in the way I wanted to be pushed. Then, came my friend who mentioned 
-            <a href='https://www.marcylabschool.org/'> the Marcy Lab School</a> how it was hands-on, practical, and how it helped him break into the tech world, I knew immediately 
-            that this was the place for me. Even right now, I know I made the right choice.
-          </p>
+    <main className='about-master'>
+      <div className='section-wrapper'>
+        <section className='about-hero reveal'>
+          <div className='about-hero-text'>
+            <h1 className='section-heading'>About Me<span className='accent-dot'>.</span></h1>
+            <p className='about-lead'>
+              First-generation Bengali-American software engineer from the Bronx — curious by nature,
+              hands-on by design.
+            </p>
+          </div>
         </section>
 
-        <section id='tools'>
+        <div className='about-grid'>
+          <section className='about-story reveal'>
+            <h2 className='about-h2'>My Story</h2>
+            <p>
+              Growing up in the Bronx, I was always the kid poking around in browser dev tools — inspecting
+              HTTP headers, tweaking cookies, and figuring out how the internet actually worked. My parents
+              and grandparents saw it before I did: <em>"Maybe he'll work with those someday."</em>
+            </p>
+            <p>
+              I worked towards a dual degree in <strong>Computer Science and Economics</strong> at the University at Buffalo.
+              CS gave me the foundations, Economics taught me to think in systems — but I craved something
+              more hands-on. A friend introduced me to <a href='https://www.marcylabschool.org/' target='_blank' rel='noopener noreferrer' className='inline-link'>Marcy Lab School</a>, a
+              rigorous software engineering fellowship focused on practical, production-level development.
+              Compared to college, it was exactly what I was looking for.
+            </p>
+            <p>
+              Today I build full-stack web applications, play with data pipelines, and explore everything
+              from backend architecture to data engineering. I want to write software that makes a real impact.
+            </p>
+          </section>
 
-        <h2>Programming Languages</h2>
+          <aside className='about-sidebar reveal'>
+            <div className='sidebar-card'>
+              <h3 className='sidebar-card-title'>Quick Facts</h3>
+              <ul className='facts-list'>
+                <li><span className='fact-icon'>📍</span> Bronx, New York</li>
+                <li><span className='fact-icon'>🎓</span> CS & Economics — UB</li>
+                <li><span className='fact-icon'>⚡</span> Marcy Lab School Fellow</li>
+                <li><span className='fact-icon'>💡</span> Full-stack & Data Engineering</li>
+                <li><span className='fact-icon'>🎌</span> Anime & Manga enthusiast</li>
+                <li><span className='fact-icon'>🌐</span> 2.34k+ visitors/mo on portfolio</li>
+              </ul>
+            </div>
 
-        <ul className='skills'>
-        <li>
-            <figure>
-              <img src={HTMLIcon} alt="HTML Logo" />
-              <figcaption>HTML5</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={CSSIcon} alt="CSS Logo" />
-              <figcaption>CSS3</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={javascriptIcon} alt="Javascript Logo" />
-              <figcaption>Javascript</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={ScalaIcon} alt="Scala Logo" />
-              <figcaption>Scala</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={PythonIcon} alt="Python Logo" />
-              <figcaption>Python</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={CIcon} alt="C Logo" />
-              <figcaption>C</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={SQLIcon} alt="SQL Logo" />
-              <figcaption>SQL</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={PHPIcon} alt="PHP Logo" />
-              <figcaption>PHP</figcaption>
-            </figure>
-          </li>
-        </ul>
+            <div className='sidebar-card'>
+              <h3 className='sidebar-card-title'>Interests</h3>
+              <div className='tags'>
+                {['Data Engineering', 'Backend Dev', 'Full-Stack', 'Data Analytics', 'Open Source', 'Anime/Manga'].map(t => (
+                  <span key={t} className='tag'>{t}</span>
+                ))}
+              </div>
+            </div>
+          </aside>
+        </div>
 
-        <h2>Frameworks</h2>
-        <ul className='skills'>
-          <li>
-            <figure>
-              <img src={ReactIcon} alt="React Logo" />
-              <figcaption>ReactJS</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={NodeIcon} alt="Node Logo" />
-              <figcaption>NodeJS</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={ExpressIcon} alt="Express Logo" />
-              <figcaption>ExpressJS</figcaption>
-            </figure>
-          </li>
-        </ul>
-
-        <h2>Dev Tools</h2>
-        <ul className='skills'>
-          <li>
-            <figure>
-              <img src={GitIcon} alt="Git Logo" />
-              <figcaption>Git</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={GithubIcon} alt="Github Logo" />
-              <figcaption>GitHub</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={CloudflareIcon} alt="Cloudflare Logo" />
-              <figcaption>CloudFlare</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={FigmaIcon} alt="Figma Logo" />
-              <figcaption>Figma</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={VMWareIcon} alt="VMWare Logo" />
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={TableauIcon} alt="Tableau Logo" />
-              <figcaption>Tableau</figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img src={StataIcon} alt="Stata Logo" />
-            </figure>
-          </li>
-        </ul>
+        <section className='timeline-section reveal'>
+          <h2 className='about-h2'>Journey</h2>
+          <div className='timeline'>
+            {TIMELINE.map((item, i) => (
+              <div key={i} className='timeline-item'>
+                <div className='timeline-year'>{item.year}</div>
+                <div className='timeline-icon'>{item.icon}</div>
+                <div className='timeline-content'>
+                  <div className='timeline-title'>{item.title}</div>
+                  <div className='timeline-sub'>{item.sub}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
-      </section>
-    </section>
-  )
-}
 
-export default About
+        <section className='skills-section'>
+          <h2 className='about-h2 reveal'>Tech Stack</h2>
+
+          <div className='skill-group reveal'>
+            <h3 className='skill-group-label'>Languages</h3>
+            <div className='skills-grid'>
+              {LANGS.map(s => <SkillChip key={s.name} {...s} />)}
+            </div>
+          </div>
+
+          <div className='skill-group reveal'>
+            <h3 className='skill-group-label'>Frameworks & Libraries</h3>
+            <div className='skills-grid'>
+              {FRAMEWORKS.map(s => <SkillChip key={s.name} {...s} />)}
+            </div>
+          </div>
+
+          <div className='skill-group reveal'>
+            <h3 className='skill-group-label'>Tools & Platforms</h3>
+            <div className='skills-grid'>
+              {TOOLS.map(s => <SkillChip key={s.name} {...s} />)}
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+};
+
+export default About;
