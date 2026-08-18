@@ -26,7 +26,7 @@ const NavBar = () => {
     <nav className={`navBar${scrolled ? ' scrolled' : ''}`}>
       <div className='nav-container'>
         <Link to='/' className='nav-logo'>
-          <span className='logo-ia'>IA</span>
+          <img src='/favicon.svg' alt='' className='logo-mark' />
           <span className='logo-name'>Ishtiaq Akanda</span>
         </Link>
 
@@ -37,11 +37,6 @@ const NavBar = () => {
                 <Link to={path}>{label}</Link>
               </li>
             ))}
-            <li>
-              <a href='https://www.linkedin.com/in/ishtiaq-akanda/' target='_blank' rel='noopener noreferrer' className='nav-cta'>
-                Hire Me
-              </a>
-            </li>
           </ul>
         )}
 
@@ -55,9 +50,6 @@ const NavBar = () => {
           {[['/', 'Home'], ['/about', 'About'], ['/projects', 'Projects'], ['/contact', 'Contact']].map(([path, label]) => (
             <li key={path}><Link to={path}>{label}</Link></li>
           ))}
-          <li>
-            <a href='https://www.linkedin.com/in/ishtiaq-akanda/' target='_blank' rel='noopener noreferrer'>Hire Me</a>
-          </li>
         </ul>
       )}
     </nav>

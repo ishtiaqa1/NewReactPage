@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1.2rem 2rem;
+  padding: 1rem 0;
   transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
   border-bottom: 1px solid transparent;
 }
@@ -17,8 +17,9 @@
 }
 
 .nav-container {
-  max-width: 1100px;
+  max-width: 1600px;
   margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3vw, 3rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,24 +32,19 @@
   text-decoration: none;
 }
 
-.logo-ia {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 8px;
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover .logo-mark {
+  transform: rotate(-8deg);
 }
 
 .logo-name {
-  font-family: var(--font-display);
   font-weight: 600;
   font-size: 1rem;
   color: var(--text-primary);
@@ -73,26 +69,6 @@
 .navElement.active a {
   color: var(--text-primary);
   background: rgba(255,255,255,0.05);
-}
-
-.navElement.active a {
-  color: var(--accent-light);
-}
-
-.nav-cta {
-  margin-left: 0.75rem;
-  padding: 0.45rem 1.1rem;
-  border-radius: 8px;
-  font-size: 0.88rem;
-  font-weight: 500;
-  background: var(--accent);
-  color: #fff !important;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.nav-cta:hover {
-  background: var(--accent-light);
-  transform: translateY(-1px);
 }
 
 .nav-mobile {

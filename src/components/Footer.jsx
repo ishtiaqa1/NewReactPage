@@ -4,7 +4,7 @@ const Footer = () => (
   <footer className='footer'>
     <div className='footer-inner section-wrapper'>
       <div className='footer-left'>
-        <span className='footer-logo'>IA</span>
+        <img src='/favicon.svg' alt='' className='footer-logo' />
         <span className='footer-name'>Ishtiaq Akanda</span>
       </div>
       <p className='footer-copy'>© {new Date().getFullYear()} · Built with React & Vite</p>

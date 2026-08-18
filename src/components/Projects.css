@@ -1,51 +1,29 @@
 .projects-master {
-  padding-top: 120px;
-  padding-bottom: 6rem;
+  padding-top: 110px;
+  padding-bottom: 3.5rem;
 }
 
-.projects-header { margin-bottom: 3rem; }
+.projects-header { margin-bottom: 2rem; }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.5rem;
 }
 
 /* Card */
 .project-card {
-  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  transition: border-color 0.2s;
   display: flex;
   flex-direction: column;
 }
 
 .project-card:hover {
   border-color: var(--border-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-}
-
-.project-card.featured {
-  border-color: var(--accent-border);
-}
-
-.featured-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-  padding: 0.2rem 0.6rem;
-  border-radius: 100px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  background: var(--accent);
-  color: #fff;
-  text-transform: uppercase;
 }
 
 /* Image */
@@ -59,23 +37,71 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.35s ease;
+  transition: transform 0.4s ease;
 }
 
 .project-card:hover .project-img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
+
+/* Project glyph badge */
+.project-glyph {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 11, 14, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.project-glyph svg { display: block; }
+
+@keyframes glyph-wobble {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+.glyph-wobble { animation: glyph-wobble 2.6s ease-in-out infinite; transform-origin: center; }
+
+@keyframes glyph-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+.glyph-pulse { animation: glyph-pulse 2s ease-in-out infinite; transform-origin: center; }
+
+@keyframes glyph-bar1 { 0%, 100% { transform: scaleY(0.6); } 50% { transform: scaleY(1); } }
+@keyframes glyph-bar2 { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.65); } }
+@keyframes glyph-bar3 { 0%, 100% { transform: scaleY(0.8); } 50% { transform: scaleY(1); } }
+.glyph-bar1 { animation: glyph-bar1 1.6s ease-in-out infinite; transform-origin: bottom; }
+.glyph-bar2 { animation: glyph-bar2 1.6s ease-in-out infinite; transform-origin: bottom; }
+.glyph-bar3 { animation: glyph-bar3 1.6s ease-in-out infinite; transform-origin: bottom; }
+
+@keyframes glyph-sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+.glyph-sway { animation: glyph-sway 3s ease-in-out infinite; transform-origin: bottom center; }
+
+@keyframes glyph-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.glyph-blink { animation: glyph-blink 1.1s step-end infinite; }
 
 .project-img-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 15, 0.75);
+  background: rgba(11, 11, 14, 0.82);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.25s;
-  backdrop-filter: blur(4px);
+  transition: opacity 0.2s;
 }
 
 .project-card:hover .project-img-overlay { opacity: 1; }
@@ -90,15 +116,14 @@
   align-items: center;
   gap: 5px;
   padding: 0.45rem 0.9rem;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
+  border: 1px solid var(--border-hover);
+  border-radius: 6px;
   font-size: 0.83rem;
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 500;
-  transition: background 0.2s;
+  transition: border-color 0.2s;
 }
-.overlay-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.overlay-link:hover { border-color: var(--text-primary); }
 
 /* Body */
 .project-body {
@@ -110,9 +135,8 @@
 }
 
 .project-title {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
@@ -122,21 +146,30 @@
   line-height: 1.75;
 }
 
-/* Highlights */
-.project-highlights {
+.project-bullets {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.highlight {
-  font-size: 0.75rem;
-  color: var(--teal);
-  background: var(--teal-glow);
-  border: 1px solid rgba(45, 212, 191, 0.2);
-  border-radius: 100px;
-  padding: 0.15rem 0.6rem;
-  font-weight: 500;
+.project-bullets li {
+  position: relative;
+  padding-left: 0.9rem;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.project-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-muted);
 }
 
 /* Tags */
@@ -149,9 +182,8 @@
 .project-tag {
   font-size: 0.75rem;
   color: var(--text-muted);
-  background: rgba(255,255,255,0.04);
   border: 1px solid var(--border);
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 0.15rem 0.55rem;
 }
 
@@ -172,13 +204,12 @@
   padding: 0.3rem 0.75rem;
   border-radius: 6px;
   border: 1px solid var(--border);
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .project-link:hover {
-  color: var(--accent-light);
-  border-color: var(--accent-border);
-  background: var(--accent-glow);
+  color: var(--text-primary);
+  border-color: var(--border-hover);
 }
 
 @media (max-width: 600px) {

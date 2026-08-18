@@ -1,6 +1,15 @@
 import { useEffect } from 'react';
 import Resume from '../assets/Resume.pdf';
+import contactPhoto from '../assets/cognizant-presentation-cropped.jpg';
 import './Contact.css';
+
+const QUICK_FACTS = [
+  { label: 'Location', value: 'Open to anywhere: in-person, remote, or hybrid' },
+  { label: 'Looking for', value: 'Full-time SWE roles, internships, collabs' },
+  { label: 'Response time', value: 'Usually within 24-48 hours' },
+];
+
+const LOOKING_FOR_TAGS = ['Full-time', 'Internships', 'Freelance', 'Collaborations'];
 
 const LINKS = [
   {
@@ -48,43 +57,42 @@ const Contact = () => {
         <div className='contact-header reveal'>
           <h1 className='section-heading'>Get in Touch<span className='accent-dot'>.</span></h1>
           <p className='section-subheading'>Open to full-time roles, internships, and collaborations.</p>
+          <p className='contact-intro'>
+            I'm wrapping up my Software Engineering Fellowship at Marcy Lab School and looking for full-time
+            engineering roles, internships, or interesting collaborations, especially anything touching
+            full-stack development, data engineering, or applied AI. Open to in-person, remote, or hybrid
+            work, anywhere.
+          </p>
         </div>
 
         <div className='contact-grid'>
           <aside className='contact-sidebar reveal'>
             <div className='contact-profile'>
               <img
-                src='https://media.licdn.com/dms/image/v2/D4E03AQGgD51n2SwI9A/profile-displayphoto-crop_800_800/B4EZxTJlXPK0AI-/0/1770921547702?e=1778112000&v=beta&t=mHr7dsT5kKxs_qZDcZxtRGcI_YC77-3gC1eWcLqm0Ic'
+                src={contactPhoto}
                 alt='Ishtiaq Akanda'
                 className='contact-avatar'
               />
               <div>
                 <h2 className='contact-name'>Ishtiaq Akanda</h2>
                 <p className='contact-role'>Software Engineer Fellow</p>
-                <span className='contact-status'>
-                  <span className='status-dot'></span>
-                  Available for hire
-                </span>
+                <span className='contact-status'>Available for hire</span>
               </div>
             </div>
 
-            <div className='contact-links-list'>
-              {LINKS.map(l => (
-                <a
-                  key={l.label}
-                  href={l.url}
-                  target={l.newTab || l.url.startsWith('http') ? '_blank' : undefined}
-                  rel='noopener noreferrer'
-                  className='contact-link-item'
-                >
-                  <span className='contact-link-icon'>{l.icon}</span>
-                  <div>
-                    <div className='contact-link-label'>{l.label}</div>
-                    <div className='contact-link-value'>{l.value}</div>
-                  </div>
-                  <svg className='contact-link-arrow' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2'><path d='M5 12h14M12 5l7 7-7 7'/></svg>
-                </a>
-              ))}
+            <div className='contact-facts-card'>
+              <h3 className='contact-facts-title'>Quick Facts</h3>
+              <ul className='contact-facts-list'>
+                {QUICK_FACTS.map(f => (
+                  <li key={f.label}>
+                    <span className='contact-facts-label'>{f.label}</span>
+                    <span className='contact-facts-value'>{f.value}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className='tags contact-facts-tags'>
+                {LOOKING_FOR_TAGS.map(t => <span key={t} className='tag'>{t}</span>)}
+              </div>
             </div>
           </aside>
 
@@ -115,6 +123,28 @@ const Contact = () => {
               </button>
             </form>
           </section>
+
+          <div className='contact-links-col reveal'>
+            <h2 className='form-heading'>Reach Me Directly</h2>
+            <div className='contact-links-list'>
+              {LINKS.map(l => (
+                <a
+                  key={l.label}
+                  href={l.url}
+                  target={l.newTab || l.url.startsWith('http') ? '_blank' : undefined}
+                  rel='noopener noreferrer'
+                  className='contact-link-item'
+                >
+                  <span className='contact-link-icon'>{l.icon}</span>
+                  <div>
+                    <div className='contact-link-label'>{l.label}</div>
+                    <div className='contact-link-value'>{l.value}</div>
+                  </div>
+                  <svg className='contact-link-arrow' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2'><path d='M5 12h14M12 5l7 7-7 7'/></svg>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </main>

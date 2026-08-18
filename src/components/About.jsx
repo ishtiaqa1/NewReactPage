@@ -1,49 +1,61 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { CERTIFICATIONS, AWARDS } from '../data/awards';
 import './About.css';
 
-const LANGS = [
-  { name: 'JavaScript', icon: 'JS', color: '#f0db4f' },
-  { name: 'Python', icon: 'PY', color: '#4584b6' },
-  { name: 'HTML5', icon: 'HT', color: '#e34f26' },
-  { name: 'CSS3', icon: 'CS', color: '#1572b6' },
-  { name: 'SQL', icon: 'SQ', color: '#336791' },
-  { name: 'PHP', icon: 'PH', color: '#8892bf' },
-  { name: 'Scala', icon: 'SC', color: '#dc322f' },
-  { name: 'C', icon: 'C', color: '#a8b9cc' },
-];
-
-const FRAMEWORKS = [
-  { name: 'React', icon: 'RE', color: '#61dafb' },
-  { name: 'Node.js', icon: 'NO', color: '#68a063' },
-  { name: 'Express', icon: 'EX', color: '#aaaaaa' },
-  { name: 'Chart.js', icon: 'CH', color: '#f06969' },
-];
-
-const TOOLS = [
-  { name: 'Git', icon: 'GI', color: '#f05032' },
-  { name: 'GitHub', icon: 'GH', color: '#ffffff' },
-  { name: 'Figma', icon: 'FI', color: '#f24e1e' },
-  { name: 'Cloudflare', icon: 'CF', color: '#f48120' },
-  { name: 'Tableau', icon: 'TA', color: '#e97627' },
-  { name: 'VMware', icon: 'VM', color: '#607078' },
-  { name: 'Stata', icon: 'ST', color: '#1a5276' },
+const SKILL_GROUPS = [
+  { label: 'Languages', items: ['JavaScript', 'Python', 'SQL', 'Scala', 'HTML5', 'CSS3', 'PHP', 'C'] },
+  { label: 'Frameworks & Libraries', items: ['React', 'Node.js', 'Express', 'FastAPI', 'Chart.js'] },
+  { label: 'Databases', items: ['PostgreSQL', 'MySQL', 'SQLAlchemy', 'Alembic', 'phpMyAdmin', 'ETL / Data Pipeline Design', 'Data Validation & QA'] },
+  { label: 'Cloud & DevOps', items: ['AWS (Solutions Architect, in progress)', 'Render', 'Vercel', 'Docker', 'GitHub Actions', 'CI/CD'] },
+  { label: 'Systems & Tools', items: ['Linux', 'Git/GitHub', 'SSH', 'VPN (Cisco AnyConnect)', 'Figma', 'Tableau', 'JIRA', 'Agile/Scrum'] },
+  { label: 'Integrations', items: ['Plaid', 'Twilio', 'LLM APIs (Groq)', 'JWT Auth', 'OAuth (Google)'] },
+  { label: 'AI-Assisted Development', items: ['Claude Code', 'Cursor'] },
 ];
 
 const TIMELINE = [
-  { year: '2021', title: 'University at Buffalo', sub: 'B.A. Computer Science & Economics', icon: '🎓' },
-  { year: '2024', title: 'Portfolio Launch', sub: 'ishtiaqakanda.dev — 2.34k+ visitors/mo', icon: '🚀' },
-  { year: '2025', title: 'American Mahjong App', sub: 'Fully Funtional Mahjong Game', icon: '🀄' },
-  { year: '2025', title: 'Marcy Lab School', sub: 'Software Engineering Fellow', icon: '⚡' },
-  { year: '2026', title: 'MangoHub Anime/Manga Dashboard', sub: 'Discover Anime and Manga', icon: '🥭' },
-  { year: '2026', title: 'US Economic Dashboard', sub: 'Visualize Govermental Data on GDP, Inflation, etc.', icon: '💸' },
+  { year: '2020', title: 'Safe Medical Care', sub: 'Data Operations Intern' },
+  { year: '2021', title: 'University at Buffalo', sub: 'B.A. Computer Science & Economics' },
+  { year: '2024', title: 'Portfolio Launch', sub: 'ishtiaqakanda.dev, 2.34k+ visitors/mo' },
+  { year: '2025', title: 'American Mahjong App', sub: 'Fully functional multiplayer Mahjong game' },
+  { year: '2025', title: 'Marcy Lab School', sub: 'Software Engineering Fellow' },
+  { year: '2026', title: 'MangoHub Anime/Manga Dashboard', sub: 'Discover anime and manga' },
+  { year: '2026', title: 'US Economic Dashboard', sub: 'Visualize governmental data on GDP, inflation, etc.' },
+  { year: '2026', title: 'Kin', sub: '1st place, Elder Care category (Marcy Lab Applied AI Residency capstone)' },
 ];
 
-const SkillChip = ({ name, icon, color }) => (
-  <div className='skill-chip'>
-    <span className='skill-icon' style={{ background: `${color}22`, color }}>{icon}</span>
-    <span className='skill-name'>{name}</span>
-  </div>
-);
+const EXPERIENCE = [
+  {
+    title: 'Data Operations Intern',
+    org: 'Safe Medical Care',
+    meta: 'Bronx, NY · Dec 2020 – Feb 2021',
+    bullets: [
+      'Processed and validated 500+ patient records into a clinical EHR portal, enforcing data integrity standards that reduced processing errors and cut record-retrieval time by 30%.',
+      'Wrote Python scripts to automate data validation and flag inconsistencies, reducing manual review time across a 3-person operations team.',
+      'Analyzed patient intake workflows to identify scheduling bottlenecks, improving appointment throughput by 20%.',
+    ],
+  },
+];
+
+const EDUCATION = [
+  {
+    title: 'Software Engineering Fellowship',
+    org: 'The Marcy Lab School',
+    meta: 'Brooklyn, NY · Sep 2025 – Present',
+    bullets: [
+      'Completing 2,000+ hours of intensive coursework in CS fundamentals, leadership development, and full-stack development using the PERN stack (PostgreSQL, Express, React, Node.js).',
+    ],
+  },
+  {
+    title: 'B.A. Computer Science & Economics (100+ credits, on pause)',
+    org: 'University at Buffalo',
+    meta: 'Buffalo, NY · Aug 2021 – Present',
+    bullets: [
+      'Coursework: Data Structures, Algorithms, Software Engineering, Microeconomic & Macroeconomic Theory, Economic Statistics.',
+      'Systems exposure: SSH, Cisco AnyConnect VPN, WinSCP, and VMware/Xpra remote Linux environments for coursework and lab access.',
+    ],
+  },
+];
 
 const About = () => {
   useEffect(() => {
@@ -66,7 +78,7 @@ const About = () => {
           <div className='about-hero-text'>
             <h1 className='section-heading'>About Me<span className='accent-dot'>.</span></h1>
             <p className='about-lead'>
-              First-generation Bengali-American software engineer from the Bronx — curious by nature,
+              First-generation Bengali-American software engineer from the Bronx. Curious by nature,
               hands-on by design.
             </p>
           </div>
@@ -76,13 +88,13 @@ const About = () => {
           <section className='about-story reveal'>
             <h2 className='about-h2'>My Story</h2>
             <p>
-              Growing up in the Bronx, I was always the kid poking around in browser dev tools — inspecting
+              Growing up in the Bronx, I was always the kid poking around in browser dev tools, inspecting
               HTTP headers, tweaking cookies, and figuring out how the internet actually worked. My parents
               and grandparents saw it before I did: <em>"Maybe he'll work with those someday."</em>
             </p>
             <p>
               I worked towards a dual degree in <strong>Computer Science and Economics</strong> at the University at Buffalo.
-              CS gave me the foundations, Economics taught me to think in systems — but I craved something
+              CS gave me the foundations, and Economics taught me to think in systems, but I craved something
               more hands-on. A friend introduced me to <a href='https://www.marcylabschool.org/' target='_blank' rel='noopener noreferrer' className='inline-link'>Marcy Lab School</a>, a
               rigorous software engineering fellowship focused on practical, production-level development.
               Compared to college, it was exactly what I was looking for.
@@ -90,6 +102,9 @@ const About = () => {
             <p>
               Today I build full-stack web applications, play with data pipelines, and explore everything
               from backend architecture to data engineering. I want to write software that makes a real impact.
+              That focus paid off with <Link to='/projects' className='inline-link'>Kin</Link>, a family caregiving
+              platform I built for my Applied AI Residency capstone. It won 1st place in the Elder Care
+              category, and I presented it to industry stakeholders at Cognizant.
             </p>
           </section>
 
@@ -97,19 +112,19 @@ const About = () => {
             <div className='sidebar-card'>
               <h3 className='sidebar-card-title'>Quick Facts</h3>
               <ul className='facts-list'>
-                <li><span className='fact-icon'>📍</span> Bronx, New York</li>
-                <li><span className='fact-icon'>🎓</span> CS & Economics — UB</li>
-                <li><span className='fact-icon'>⚡</span> Marcy Lab School Fellow</li>
-                <li><span className='fact-icon'>💡</span> Full-stack & Data Engineering</li>
-                <li><span className='fact-icon'>🎌</span> Anime & Manga enthusiast</li>
-                <li><span className='fact-icon'>🌐</span> 2.34k+ visitors/mo on portfolio</li>
+                <li>Bronx, New York</li>
+                <li>CS & Economics, UB</li>
+                <li>Marcy Lab School Fellow</li>
+                <li>Full-stack & Data Engineering</li>
+                <li>AWS Solutions Architect (in progress)</li>
+                <li>2.34k+ visitors/mo on portfolio</li>
               </ul>
             </div>
 
             <div className='sidebar-card'>
               <h3 className='sidebar-card-title'>Interests</h3>
               <div className='tags'>
-                {['Data Engineering', 'Backend Dev', 'Full-Stack', 'Data Analytics', 'Open Source', 'Anime/Manga'].map(t => (
+                {['Data Engineering', 'Backend Dev', 'Full-Stack', 'Applied AI', 'Cloud Infrastructure', 'Open Source'].map(t => (
                   <span key={t} className='tag'>{t}</span>
                 ))}
               </div>
@@ -117,44 +132,91 @@ const About = () => {
           </aside>
         </div>
 
-        <section className='timeline-section reveal'>
-          <h2 className='about-h2'>Journey</h2>
-          <div className='timeline'>
-            {TIMELINE.map((item, i) => (
-              <div key={i} className='timeline-item'>
-                <div className='timeline-year'>{item.year}</div>
-                <div className='timeline-icon'>{item.icon}</div>
-                <div className='timeline-content'>
-                  <div className='timeline-title'>{item.title}</div>
-                  <div className='timeline-sub'>{item.sub}</div>
+        <div className='journey-grid'>
+          <section className='timeline-section reveal'>
+            <h2 className='about-h2'>Journey</h2>
+            <div className='timeline'>
+              {TIMELINE.map((item, i) => (
+                <div key={i} className='timeline-item'>
+                  <div className='timeline-year'>{item.year}</div>
+                  <div className='timeline-content'>
+                    <div className='timeline-title'>{item.title}</div>
+                    <div className='timeline-sub'>{item.sub}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className='skills-section reveal'>
+            <h2 className='about-h2'>Tech Stack</h2>
+            {SKILL_GROUPS.map(g => (
+              <div key={g.label} className='skill-group'>
+                <h3 className='skill-group-label'>{g.label}</h3>
+                <div className='skills-grid'>
+                  {g.items.map(s => <span key={s} className='skill-chip'>{s}</span>)}
                 </div>
               </div>
             ))}
-          </div>
+          </section>
+        </div>
+
+        <section className='exp-section reveal'>
+          <h2 className='about-h2'>Experience</h2>
+          {EXPERIENCE.map((e, i) => (
+            <div key={i} className='exp-item'>
+              <div className='exp-head'>
+                <h3 className='exp-title'>{e.title}, {e.org}</h3>
+                <span className='exp-meta'>{e.meta}</span>
+              </div>
+              <ul className='exp-bullets'>
+                {e.bullets.map((b, bi) => <li key={bi}>{b}</li>)}
+              </ul>
+            </div>
+          ))}
         </section>
 
-        <section className='skills-section'>
-          <h2 className='about-h2 reveal'>Tech Stack</h2>
-
-          <div className='skill-group reveal'>
-            <h3 className='skill-group-label'>Languages</h3>
-            <div className='skills-grid'>
-              {LANGS.map(s => <SkillChip key={s.name} {...s} />)}
+        <section className='exp-section reveal'>
+          <h2 className='about-h2'>Education</h2>
+          {EDUCATION.map((e, i) => (
+            <div key={i} className='exp-item'>
+              <div className='exp-head'>
+                <h3 className='exp-title'>{e.title}, {e.org}</h3>
+                <span className='exp-meta'>{e.meta}</span>
+              </div>
+              <ul className='exp-bullets'>
+                {e.bullets.map((b, bi) => <li key={bi}>{b}</li>)}
+              </ul>
             </div>
+          ))}
+        </section>
+
+        <section className='certs-section reveal'>
+          <h2 className='about-h2'>Certifications & Awards</h2>
+
+          <h3 className='skill-group-label'>Awards</h3>
+          <div className='cert-grid'>
+            {AWARDS.map((a, i) => (
+              <div key={i} className='cert-card cert-card-award'>
+                {a.img && (
+                  <div className='cert-card-img-wrap'>
+                    <img src={a.img} alt={a.title} className='cert-card-img' />
+                  </div>
+                )}
+                <span className='cert-card-title'>{a.title}</span>
+                <span className='cert-card-org'>{a.org}</span>
+              </div>
+            ))}
           </div>
 
-          <div className='skill-group reveal'>
-            <h3 className='skill-group-label'>Frameworks & Libraries</h3>
-            <div className='skills-grid'>
-              {FRAMEWORKS.map(s => <SkillChip key={s.name} {...s} />)}
-            </div>
-          </div>
-
-          <div className='skill-group reveal'>
-            <h3 className='skill-group-label'>Tools & Platforms</h3>
-            <div className='skills-grid'>
-              {TOOLS.map(s => <SkillChip key={s.name} {...s} />)}
-            </div>
+          <h3 className='skill-group-label cert-subheading'>Certifications</h3>
+          <div className='cert-grid'>
+            {CERTIFICATIONS.map((c, i) => (
+              <div key={i} className='cert-card'>
+                <span className='cert-card-title'>{c.title}</span>
+                <span className='cert-card-org'>{c.org}</span>
+              </div>
+            ))}
           </div>
         </section>
       </div>
