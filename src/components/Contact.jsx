@@ -5,11 +5,11 @@ import './Contact.css';
 
 const QUICK_FACTS = [
   { label: 'Location', value: 'Open to anywhere: in-person, remote, or hybrid' },
-  { label: 'Looking for', value: 'Full-time SWE roles, internships, collabs' },
+  { label: 'Looking for', value: 'Interesting collaborations, freelance, networking' },
   { label: 'Response time', value: 'Usually within 24-48 hours' },
 ];
 
-const LOOKING_FOR_TAGS = ['Full-time', 'Internships', 'Freelance', 'Collaborations'];
+const LOOKING_FOR_TAGS = ['Freelance', 'Collaborations', 'Networking'];
 
 const LINKS = [
   {
@@ -56,12 +56,12 @@ const Contact = () => {
       <div className='section-wrapper'>
         <div className='contact-header reveal'>
           <h1 className='section-heading'>Get in Touch<span className='accent-dot'>.</span></h1>
-          <p className='section-subheading'>Open to full-time roles, internships, and collaborations.</p>
+          <p className='section-subheading'>Open to interesting collaborations and conversations.</p>
           <p className='contact-intro'>
-            I'm wrapping up my Software Engineering Fellowship at Marcy Lab School and looking for full-time
-            engineering roles, internships, or interesting collaborations, especially anything touching
-            full-stack development, data engineering, or applied AI. Open to in-person, remote, or hybrid
-            work, anywhere.
+            I'm currently a Software Engineer Associate at Arkestro, building on the foundation from my
+            Software Engineering Fellowship at Marcy Lab School. I'm always open to interesting
+            collaborations, freelance opportunities, or conversations around full-stack development, data
+            engineering, or applied AI.
           </p>
         </div>
 
@@ -75,8 +75,8 @@ const Contact = () => {
               />
               <div>
                 <h2 className='contact-name'>Ishtiaq Akanda</h2>
-                <p className='contact-role'>Software Engineer Fellow</p>
-                <span className='contact-status'>Available for hire</span>
+                <p className='contact-role'>Software Engineer Associate at Arkestro</p>
+                <span className='contact-status'>Open to collaborations</span>
               </div>
             </div>
 

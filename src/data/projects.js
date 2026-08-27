@@ -1,10 +1,11 @@
-import kin from '../assets/kin.png';
-import mahjong from '../assets/mahjong.jpg';
-import fred from '../assets/freddashboard.png';
-import cli from '../assets/command-line.jpg';
 import portfolioPic from '../assets/Portfolio-site.png';
+import mahjong from '../assets/mahjong.jpg';
 import mangohub from '../assets/mangohub.png';
+import fred from '../assets/freddashboard.png';
+import marcySimulation from '../assets/marcy-the-simulation.png';
+import kin from '../assets/kin.png';
 
+// Ordered newest first (reverse-chronological) to match the Journey timeline on the About page.
 export const PROJECTS = [
   {
     title: 'Kin',
@@ -23,36 +24,18 @@ export const PROJECTS = [
     ],
   },
   {
-    title: 'Mahjong',
-    img: mahjong,
-    badge: 'mahjong',
-    description: 'An interactive, multiplayer American Mahjong game built with a 3-person team over 3 months — real-time gameplay, user authentication, and live leaderboards.',
+    title: 'Marcy: The Simulation',
+    img: marcySimulation,
+    badge: 'game',
+    description: 'A React career-journey game simulating the path through Marcy Lab School — qualify, get through bootcamp, land the job, and climb. 1st place, Best in Creativity — Marcy Lab School × Envelope hackathon.',
     bullets: [
-      'Led full-stack implementation (React frontend, PHP/SQL backend) supporting 100+ concurrent users, resolving real-time state-sync issues with persistent database triggers to eliminate race conditions.',
-      'Deployed to University at Buffalo Linux servers via SSH and WinSCP over a Cisco AnyConnect VPN, managing the full remote deployment pipeline.',
-      'Coordinated the team using Git — enforcing branching conventions and running code reviews.',
+      'Built a full React game across 15 screens simulating the coding-career journey — Qualifying, Bootcamp, Hiring, Employment, and Executive stages — with a shop, upgrades, and a leaderboard.',
+      'Refactored an original ~150k-character single-component prototype into a modular architecture: a central game-engine hook, pure data/lib layers, and one presentational component per screen.',
+      'Integrated the public Piston API to run and grade a live in-browser coding challenge, with all game state persisted to localStorage and no backend required.',
     ],
-    tags: ['React', 'PHP', 'MySQL', 'Multiplayer', 'Auth'],
+    tags: ['React', 'Vite', 'JavaScript', 'Game Design'],
     links: [
-      { label: 'GitHub', url: 'https://github.com/ishtiaqa1/Mahjong', icon: 'gh' },
-      { label: 'Figma', url: 'https://www.figma.com/design/poXUVDO8YHUaDKAV9BOqlB/Team-Jokers?node-id=0-1', icon: 'fi' },
-      { label: 'Live', url: 'https://mahjong-seven-sage.vercel.app/', icon: 'live' },
-    ],
-  },
-  {
-    title: 'FRED Dashboard',
-    img: fred,
-    badge: 'chart',
-    description: 'A full-stack dashboard visualizing macroeconomic data from the FRED (Federal Reserve) API — GDP, unemployment, inflation, and interest rates.',
-    bullets: [
-      'Built a custom Express backend to normalize inconsistent FRED API data into clean JSON, automating the data-fetching pipeline.',
-      'Implemented interactive Chart.js visualizations for real-time trend analysis across all four indicators.',
-      'Deployed and maintained the app in a Linux environment, managing process lifecycle, environment variables, and production logging.',
-    ],
-    tags: ['React', 'Express', 'Chart.js', 'REST API', 'Data Viz'],
-    links: [
-      { label: 'GitHub', url: 'https://github.com/ishtiaqa1/Fred-DashBoard', icon: 'gh' },
-      { label: 'Live', url: 'https://freddashboard.vercel.app/', icon: 'live' },
+      { label: 'GitHub', url: 'https://github.com/Ish-Darlin-Sina/marcy-the-simulation', icon: 'gh' },
     ],
   },
   {
@@ -73,6 +56,39 @@ export const PROJECTS = [
     ],
   },
   {
+    title: 'FRED Dashboard',
+    img: fred,
+    badge: 'chart',
+    description: 'A full-stack dashboard visualizing macroeconomic data from the FRED (Federal Reserve) API — GDP, unemployment, inflation, and interest rates.',
+    bullets: [
+      'Built a custom Express backend to normalize inconsistent FRED API data into clean JSON, automating the data-fetching pipeline.',
+      'Implemented interactive Chart.js visualizations for real-time trend analysis across all four indicators.',
+      'Deployed and maintained the app in a Linux environment, managing process lifecycle, environment variables, and production logging.',
+    ],
+    tags: ['React', 'Express', 'Chart.js', 'REST API', 'Data Viz'],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/ishtiaqa1/Fred-DashBoard', icon: 'gh' },
+      { label: 'Live', url: 'https://freddashboard.vercel.app/', icon: 'live' },
+    ],
+  },
+  {
+    title: 'Mahjong',
+    img: mahjong,
+    badge: 'mahjong',
+    description: 'An interactive, multiplayer American Mahjong game built with a 3-person team over 3 months — real-time gameplay, user authentication, and live leaderboards.',
+    bullets: [
+      'Led full-stack implementation (React frontend, PHP/SQL backend) supporting 100+ concurrent users, resolving real-time state-sync issues with persistent database triggers to eliminate race conditions.',
+      'Deployed to University at Buffalo Linux servers via SSH and WinSCP over a Cisco AnyConnect VPN, managing the full remote deployment pipeline.',
+      'Coordinated the team using Git — enforcing branching conventions and running code reviews.',
+    ],
+    tags: ['React', 'PHP', 'MySQL', 'Multiplayer', 'Auth'],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/ishtiaqa1/Mahjong', icon: 'gh' },
+      { label: 'Figma', url: 'https://www.figma.com/design/poXUVDO8YHUaDKAV9BOqlB/Team-Jokers?node-id=0-1', icon: 'fi' },
+      { label: 'Live', url: 'https://mahjong-seven-sage.vercel.app/', icon: 'live' },
+    ],
+  },
+  {
     title: 'Portfolio Site',
     img: portfolioPic,
     badge: 'live',
@@ -81,16 +97,6 @@ export const PROJECTS = [
     links: [
       { label: 'GitHub', url: 'https://github.com/ishtiaqa1/NewReactPage', icon: 'gh' },
       { label: 'Live', url: 'https://ishtiaqakanda.dev/', icon: 'live' },
-    ],
-  },
-  {
-    title: 'CLI Rock Paper Scissors',
-    img: cli,
-    badge: 'cli',
-    description: 'Command-line game where players challenge the computer and track personal win/loss stats across sessions. Focused on clean OOP design and file-based persistence.',
-    tags: ['Python', 'CLI', 'OOP'],
-    links: [
-      { label: 'GitHub', url: 'https://github.com/ishtiaqa1/swe-project-1-cli-app', icon: 'gh' },
     ],
   },
 ];

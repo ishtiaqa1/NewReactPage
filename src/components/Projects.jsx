@@ -44,11 +44,13 @@ const ProjectGlyph = ({ type }) => {
       </svg>
     );
   }
-  if (type === 'cli') {
+  if (type === 'game') {
     return (
-      <svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='#d7d2c4' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
-        <path d='M5 6l5 5-5 5' />
-        <rect x='13' y='16' width='6' height='2' fill='#d7d2c4' stroke='none' className='glyph-blink' />
+      <svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='#7dd3c0' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='glyph-pulse'>
+        <rect x='2' y='8' width='20' height='10' rx='5' />
+        <path d='M7 11v4M5 13h4' />
+        <circle cx='16' cy='11.5' r='1' fill='#7dd3c0' stroke='none' />
+        <circle cx='18.5' cy='14' r='1' fill='#7dd3c0' stroke='none' />
       </svg>
     );
   }

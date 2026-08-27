@@ -17,14 +17,24 @@ const TIMELINE = [
   { year: '2020', title: 'Safe Medical Care', sub: 'Data Operations Intern' },
   { year: '2021', title: 'University at Buffalo', sub: 'B.A. Computer Science & Economics' },
   { year: '2024', title: 'Portfolio Launch', sub: 'ishtiaqakanda.dev, 2.34k+ visitors/mo' },
-  { year: '2025', title: 'American Mahjong App', sub: 'Fully functional multiplayer Mahjong game' },
+  { year: '2025', title: 'American Mahjong App', sub: 'Fully functional multiplayer Mahjong game — University at Buffalo team project' },
   { year: '2025', title: 'Marcy Lab School', sub: 'Software Engineering Fellow' },
   { year: '2026', title: 'MangoHub Anime/Manga Dashboard', sub: 'Discover anime and manga' },
   { year: '2026', title: 'US Economic Dashboard', sub: 'Visualize governmental data on GDP, inflation, etc.' },
+  { year: '2026', title: 'Marcy: The Simulation', sub: '1st place, Best in Creativity — Marcy Lab School × Envelope hackathon' },
   { year: '2026', title: 'Kin', sub: '1st place, Elder Care category (Marcy Lab Applied AI Residency capstone)' },
+  { year: '2026', title: 'Arkestro', sub: 'Software Engineer Associate' },
 ];
 
 const EXPERIENCE = [
+  {
+    title: 'Software Engineer Associate',
+    org: 'Arkestro',
+    meta: 'Remote · Aug 2026 – Present',
+    bullets: [
+      'Contributing to full-stack engineering initiatives within a cross-functional squad, building procurement software that helps teams evaluate and act on sourcing opportunities.',
+    ],
+  },
   {
     title: 'Data Operations Intern',
     org: 'Safe Medical Care',
@@ -41,9 +51,9 @@ const EDUCATION = [
   {
     title: 'Software Engineering Fellowship',
     org: 'The Marcy Lab School',
-    meta: 'Brooklyn, NY · Sep 2025 – Present',
+    meta: 'Brooklyn, NY · Sep 2025 – Aug 2026',
     bullets: [
-      'Completing 2,000+ hours of intensive coursework in CS fundamentals, leadership development, and full-stack development using the PERN stack (PostgreSQL, Express, React, Node.js).',
+      'Completed 2,000+ hours of intensive coursework in CS fundamentals, leadership development, and full-stack development using the PERN stack (PostgreSQL, Express, React, Node.js).',
     ],
   },
   {
@@ -100,11 +110,15 @@ const About = () => {
               Compared to college, it was exactly what I was looking for.
             </p>
             <p>
-              Today I build full-stack web applications, play with data pipelines, and explore everything
-              from backend architecture to data engineering. I want to write software that makes a real impact.
-              That focus paid off with <Link to='/projects' className='inline-link'>Kin</Link>, a family caregiving
-              platform I built for my Applied AI Residency capstone. It won 1st place in the Elder Care
-              category, and I presented it to industry stakeholders at Cognizant.
+              I want to write software that makes a real impact. That focus paid off with{' '}
+              <Link to='/projects' className='inline-link'>Kin</Link>, a family caregiving platform I
+              built at Marcy Lab School for my Applied AI Residency capstone. It won 1st place in the
+              Elder Care category, and my team and I were selected to present it to industry stakeholders
+              at Cognizant.
+            </p>
+            <p>
+              I recently joined Arkestro as a Software Engineer Associate, where I'm continuing to build
+              full-stack applications and explore everything from backend architecture to data engineering.
             </p>
           </section>
 
@@ -112,9 +126,9 @@ const About = () => {
             <div className='sidebar-card'>
               <h3 className='sidebar-card-title'>Quick Facts</h3>
               <ul className='facts-list'>
+                <li>Software Engineer Associate @ Arkestro</li>
                 <li>Bronx, New York</li>
                 <li>CS & Economics, UB</li>
-                <li>Marcy Lab School Fellow</li>
                 <li>Full-stack & Data Engineering</li>
                 <li>AWS Solutions Architect (in progress)</li>
                 <li>2.34k+ visitors/mo on portfolio</li>

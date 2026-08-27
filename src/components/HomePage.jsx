@@ -17,7 +17,8 @@ const STATS = [
   { value: 'Bronx, NY', label: 'Born & raised' },
 ];
 
-const FEATURED_PROJECTS = PROJECTS.slice(0, 4); // Kin, Mahjong, FRED Dashboard, MangoHub
+const FEATURED_TITLES = ['Kin', 'Mahjong', 'FRED Dashboard', 'MangoHub'];
+const FEATURED_PROJECTS = FEATURED_TITLES.map(t => PROJECTS.find(p => p.title === t)).filter(Boolean);
 
 const TrophyIcon = () => (
   <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.5'>
@@ -39,8 +40,13 @@ const HomePage = () => {
   return (
     <main className='homepage-master'>
       <section className='hero-section section-wrapper'>
+        <div className='hero-photo reveal'>
+          <img src={heroPhoto} alt='Ishtiaq Akanda presenting Kin at Cognizant' className='hero-photo-img' />
+          <p className='hero-photo-caption'>Presenting Kin to industry stakeholders at Cognizant</p>
+        </div>
+
         <div className='hero-main'>
-          <p className='hero-badge reveal'>Open to opportunities — Marcy Lab School Fellow</p>
+          <p className='hero-badge reveal'>Software Engineer Associate at Arkestro</p>
 
           <h1 className='hero-title reveal'>
             Hi, I'm Ishtiaq Akanda<span className='accent-dot'>.</span>
@@ -49,8 +55,9 @@ const HomePage = () => {
           <h2 className='hero-role reveal'>{ROLES.join(' · ')}</h2>
 
           <p className='hero-bio reveal'>
-            First-gen Bengali-American from the Bronx. CS & Economics from University at Buffalo (100+ Credits).
-            Now sharpening my craft at <a href='https://www.marcylabschool.org/' target='_blank' rel='noopener noreferrer' className='inline-link'>Marcy Lab School</a> — building things I care about, one commit at a time.
+            First-gen Bengali-American from the Bronx. I studied Computer Science & Economics at the
+            University at Buffalo and completed the Software Engineering Fellowship at Marcy Lab School.
+            Now a Software Engineer Associate at Arkestro.
           </p>
 
           <div className='hero-actions reveal'>
@@ -70,11 +77,6 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className='hero-photo reveal'>
-          <img src={heroPhoto} alt='Ishtiaq Akanda presenting Kin at Cognizant' className='hero-photo-img' />
-          <p className='hero-photo-caption'>Presenting Kin to industry stakeholders at Cognizant</p>
         </div>
       </section>
 
